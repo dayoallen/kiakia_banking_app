@@ -1,0 +1,11 @@
+tasks:
+  - name: Flutter Web Setup
+    init: |
+      flutter pub get
+      flutter create --platforms web .
+    command: flutter run -d chrome --web-port 3000 --web-hostname 0.0.0.0
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+    name: Flutter Web
